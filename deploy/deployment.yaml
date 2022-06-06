@@ -18,7 +18,7 @@ spec:
       - name: ghcr
       containers:
       - name: sf-che-api
-        image: ghcr.io/datewu/sf-che.back:${tag}
+        image: ghcr.io/datewu/sf-che.back:v0.0.4
         resources:
           limits:
             cpu: 150m

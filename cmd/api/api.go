@@ -12,7 +12,7 @@ func New(app *gtea.App) http.Handler {
 	conf := handler.DefaultConf()
 	conf.CORS.TrustedOrigins = []string{"sf-che.com", "*.sf-che.com"}
 	r, _ := handler.NewRouterGroup(conf)
-	g := r.Group("")
+	g := r.Group("/v1")
 	setRoutes(app, g)
 	return g
 }
