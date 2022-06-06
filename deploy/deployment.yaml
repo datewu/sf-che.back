@@ -51,6 +51,7 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/enable-cors: "true"
   name: sf-che-api
 spec:
   ingressClassName: public
