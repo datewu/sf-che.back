@@ -1,8 +1,13 @@
 package main
 
 import (
+	"context"
 	"flag"
-	"fmt"
+
+	"github.com/datewu/sf-che/cmd/api"
+
+	"github.com/datewu/gtea"
+	"github.com/datewu/gtea/jsonlog"
 )
 
 var (
@@ -19,7 +24,36 @@ func main() {
 	flag.StringVar(&env, "env", "development", "Environment (development|staging|production)")
 
 	flag.Parse()
+	cfg := &gtea.Config{
+		Port:     port,
+		Env:      env,
+		Metrics:  true,
+		LogLevel: jsonlog.LevelInfo,
+	}
+	app := gtea.NewApp(cfg)
+	app.Logger.Info("APP Starting",
+		map[string]string{
+			"version":   version,
+			"gitCommit": buildTime,
+			"mode":      env,
+		})
+	app.AddMetaData("version", version)
 
-	fmt.Println("wutuofu.com", port, env)
-	fmt.Println(version, buildTime)
+	ctx := context.Background()
+	// closeDB, err := db.Init(ctx)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// app.AddExitFn(closeDB)
+	// cacheDB, err := cache.Init(ctx)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// app.AddExitFn(cacheDB)
+	// daemon, err := crawl.Run(ctx, app)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// app.AddExitFn(daemon)
+	app.Serve(ctx, api.New(app))
 }
