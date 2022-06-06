@@ -19,4 +19,4 @@ FROM alpine@sha256:0615cdd745d0b78e7e6ac3a7b1f02e4daefa664eae0324120955f4e4c91be
 RUN apk --no-cache add ca-certificates
 WORKDIR /
 COPY --from=builder /app/app-binary /app-binary
-ENTRYPOINT [ "/app-binary", "-mode", "prod" ]
+ENTRYPOINT [ "/app-binary", "-env", "production" ]
