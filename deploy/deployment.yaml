@@ -14,6 +14,8 @@ spec:
       labels:
         app: sf-che-api
     spec:
+      imagePullSecrets:
+      - name: ghcr
       containers:
       - name: sf-che-api
         image: ghcr.io/datewu/sf-che-api:latest
