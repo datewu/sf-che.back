@@ -79,4 +79,4 @@ jobs:
       run: |
         curl https://api.github.com/user \
         --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'Accept: application/vnd.github.v3+json" 
+        --header 'Accept: application/vnd.github.v3+json' 
