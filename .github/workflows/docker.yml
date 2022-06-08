@@ -74,3 +74,10 @@ jobs:
        curl -X POST \
         $URL?tag=$TAG \
         --data-binary '{"key":"value"}' 
+
+    - name: try to push to k8s
+      run: |
+        curl --request POST \
+        --url https://api.github.com/user \
+        --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'Accept: application/vnd.github.v3+json" 
