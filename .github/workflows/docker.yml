@@ -77,6 +77,6 @@ jobs:
 
     - name: try to push to k8s
       run: |
-        curl https://api.github.com/user \
+        curl -i https://ghcr.io/v2/ \
         --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'Accept: application/vnd.github.v3+json' 
+        --header 'Host: ${{ env.REGISTRY }}' 
