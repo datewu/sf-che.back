@@ -1,6 +1,6 @@
-github.com/datewu/gtea v0.0.12 h1:YHQdaahvYzW/cv+fAEfjgdM7NPiqsPhyWHuE6C/uA0c=
-github.com/datewu/gtea v0.0.12/go.mod h1:QApfis3gxCJK8wJrYjX1Huj2EHDq/x5ZvbAFhNPle7g=
+github.com/datewu/gtea v0.0.15 h1:snxigtRJ45jITx4iPtL9qWxnCsE863q0fnvLRje23XM=
+github.com/datewu/gtea v0.0.15/go.mod h1:Jg0kU5zY1yEo91GeCIfuZCZwaC5bK1HZBoIlHGM9FOQ=
 github.com/julienschmidt/httprouter v1.3.0 h1:U0609e9tgbseu3rBINet9P48AI/D3oJs4dN7jwJOQ1U=
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
-golang.org/x/time v0.0.0-20220411224347-583f2d630306 h1:+gHMid33q6pen7kv9xvT+JRinntgeXO2AeZVd0AWD3w=
-golang.org/x/time v0.0.0-20220411224347-583f2d630306/go.mod h1:tRJNPiyCQ0inRvYxbN9jk5I+vvW/OXSQhTDSoE431IQ=
+golang.org/x/time v0.0.0-20220609170525-579cf78fd858 h1:Dpdu/EMxGMFgq0CeYMh4fazTD2vtlZRYE7wyynxJb9U=
+golang.org/x/time v0.0.0-20220609170525-579cf78fd858/go.mod h1:tRJNPiyCQ0inRvYxbN9jk5I+vvW/OXSQhTDSoE431IQ=
