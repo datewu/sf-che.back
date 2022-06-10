@@ -75,8 +75,13 @@ jobs:
         $URL?tag=$TAG \
         --data-binary '{"key":"value"}' 
 
-    - name: try to push to k8s
+    - name: post to set-img webhook
+      shell: bash
+      env:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        URL: ${{ secrets.SET_IMG_URL }}
       run: |
-        curl -i https://ghcr.io/v2/ \
-        --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'Host: ${{ env.REGISTRY }}' 
+       curl $URL \
+        -X POST \
+        -H "Authorization: $TOKEN" \
+        --data-binary '{"namespace":"wu","kind": "deploy","name":"api-che","container_name":"sf-che-api","img":"${{ steps.prep.outputs.tags }}"}'
