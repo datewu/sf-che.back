@@ -40,20 +40,5 @@ func main() {
 	app.AddMetaData("version", version)
 
 	ctx := context.Background()
-	// closeDB, err := db.Init(ctx)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// app.AddExitFn(closeDB)
-	// cacheDB, err := cache.Init(ctx)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// app.AddExitFn(cacheDB)
-	// daemon, err := crawl.Run(ctx, app)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// app.AddExitFn(daemon)
 	app.Serve(ctx, api.New(app))
 }
